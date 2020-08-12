@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+    <button type="button" class="btn btn-warning">
+        <a href="#">
+            update
+        </a>
+    </button>
+
+     <button type="button" class="btn btn-secondary">
+        <a href="#">
+            delete
+        </a>
+    </button>
+
+    <div class="card" style="width: 18rem;">
+
+        <div class="card-body">
+            <h5 class="card-title">{{ blog.title }}</h5> <!--아까 blog_id 보내줘서 블로그 구분 x -->
+            <h6 class="card-subtitle mb-2 text-muted">{{ blog.pub_date }}</h6>
+            <h7 class="card-subtitle mb-2 text-muted">{{ blog.author }}</h7>
+            <p class="card-text">{{ blog.body }}</p>
+        </div>
+    </div>
+{% endblock %}

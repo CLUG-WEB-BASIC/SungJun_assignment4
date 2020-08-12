@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+    블로그 리스트 페이지 입니다.
+    <button type="button" class="btn btn-success">
+        <a href="{% url 'blog_new' %}">
+            New
+        </a>
+    </button>
+    {% for blog in blogs %}
+        <div class="card" style="width: 100%;">
+            <h5 class="card-title">{{ blog.title }}</h5> <!--cmd + opt + l는 코드정렬, 타이틀은 중괄호 두개 중괄호 사이의 변수로 치환하라는 의미 -->
+            <h6 class="card-subtitle">{{ blog.author }}</h6>
+            <p class="card-text">{{ blog.summary }}</p>
+
+            <a href="{% url 'read_blog_detail' blog.id %}" class="btn btn-outline-info">More</a>
+        </div>
+        <div class="card-body">
+        </div>
+        <hr>
+    {% endfor %}
+
+{% endblock %}
